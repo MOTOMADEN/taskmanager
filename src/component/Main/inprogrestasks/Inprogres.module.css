@@ -1,0 +1,309 @@
+/* Inprogres.module.css - نسخه responsive */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.inprogres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin: 50px auto 0px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.inprogrestxt {
+  display: flex;
+  width: 100%;
+  font-weight: bolder;
+  color: rgb(64, 65, 66);
+}
+
+.inprogrescard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.inprogrestasks {
+  width: 98%;
+  background-color: rgb(250, 245, 245);
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 1px 4px 0px;
+  transition-duration: 0.2s;
+}
+
+.inprogrestasks:hover {
+  transform: translateY(-15px);
+}
+
+.inprogresname {
+  font-weight: bolder;
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+}
+
+.inprogresdiscription {
+  font-weight: bolder;
+  color: rgb(137, 146, 146);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.inprogresbtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  width: auto;
+}
+
+.inprogresrightprt {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.inprogresleftpart {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.done {
+  font-weight: bolder;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  transition: all 0.2s;
+}
+
+.done:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(32, 146, 108);
+}
+
+.important {
+  font-weight: bolder;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.important:hover {
+  filter: brightness(0.9);
+  transform: scale(1.05);
+}
+
+.edit, .delet {
+  font-weight: bolder;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.edit:hover {
+  background-color: rgb(14, 180, 231);
+  color: white;
+}
+
+.delet:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(231, 14, 79);
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  color: #999;
+  font-weight: bold;
+}
+
+.empty p {
+  margin: 10px 0;
+}
+
+/* ========== responsive ========== */
+
+/* تبلت (768px تا 1024px) */
+@media (max-width: 1024px) {
+  .inprogres {
+    width: 85%;
+    margin: 30px auto 0px;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .inprogrescard {
+    gap: 30px;
+  }
+
+  .inprogresname {
+    font-size: 1rem;
+  }
+
+  .inprogresdiscription {
+    font-size: 0.85rem;
+  }
+}
+
+/* موبایل (تا 768px) */
+@media (max-width: 768px) {
+  .inprogres {
+    width: 95%;
+    margin: 20px auto 0px;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .inprogrestasks {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .inprogresdetails {
+    width: 100%;
+  }
+
+  .inprogresname {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .inprogresdiscription {
+    font-size: 0.8rem;
+  }
+
+  .inprogresbtns {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .inprogresrightprt {
+    gap: 8px;
+  }
+
+  .inprogresleftpart {
+    gap: 6px;
+  }
+
+  .done, .important, .edit, .delet {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .edit, .delet {
+    font-size: 14px;
+  }
+
+  .inprogrestxt {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .empty {
+    padding: 30px 20px;
+  }
+
+  .empty p {
+    font-size: 14px;
+  }
+}
+
+/* موبایل خیلی کوچک (تا 480px) */
+@media (max-width: 480px) {
+  .inprogres {
+    width: 98%;
+    padding: 8px;
+    gap: 12px;
+  }
+
+  .inprogrestasks {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .inprogresname {
+    font-size: 0.9rem;
+  }
+
+  .inprogresdiscription {
+    font-size: 0.7rem;
+  }
+
+  .inprogresbtns {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .inprogresrightprt {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .inprogresleftpart {
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .done, .important, .edit, .delet {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .edit, .delet {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .inprogrestxt {
+    font-size: 0.9rem;
+  }
+
+  .empty {
+    padding: 20px 15px;
+  }
+
+  .empty p {
+    font-size: 12px;
+  }
+}
+
+/* انیمیشن fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
