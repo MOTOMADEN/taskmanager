@@ -71,14 +71,14 @@ function Addtasks({ onAddTask ,onFilterChange }) {
             ))}
           </select>
         </div>
-        {addingbox && (
+      </div>
+      {addingbox && (
           <Addbox
             closebox={closebox}
             selectvalue={selectvalue}
             onAddTask={handleAddTask}
           />
         )}
-      </div>
     </>
   );
 }
