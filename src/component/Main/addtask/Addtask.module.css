@@ -269,7 +269,7 @@
     width: 400px;
     height: 330px;
     right: 50%;
-    top: 50%;
+    top: 400px;
     transform: translateX(50%);
   }
 }
