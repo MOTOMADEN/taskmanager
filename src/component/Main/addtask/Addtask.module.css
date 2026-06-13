@@ -1,17 +1,6 @@
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 900;
-
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-}
-
 .addtasks {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
@@ -103,20 +92,31 @@
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
 
 .Addbox {
   position: fixed;
-  z-index: 901;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 25px;
   height: 400px;
   width: 500px;
-  top: 400px;
-  left: 50%;
-  transform: translate(-50%, -50%);
- background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));  
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
   border-radius: 30px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -168,8 +168,6 @@
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
 
-
-
 .inputtask {
   width: 90%;
   outline: none;
@@ -186,7 +184,7 @@
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
-/* برای چک‌باکس در حالت ادیت */
+
 .checkboxGroup {
   margin-top: 15px;
   padding: 10px;
@@ -227,9 +225,6 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  
-  background-position: right 12px center;
-  background-size: 16px;
 }
 
 .shoeselection:hover {
@@ -245,7 +240,6 @@
   background: white;
 }
 
-/* استایل برای option ها */
 .shoeselection option {
   padding: 12px;
   background: white;
@@ -254,226 +248,31 @@
   transition: all 0.2s ease;
 }
 
-.shoeselection option:hover {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-}
-
-/* ========== responsive ========== */
-
-/* تبلت (768px تا 1024px) */
+/* Responsive */
 @media (max-width: 1024px) {
   .addtasks {
     margin-right: 100px;
     margin-left: 100px;
     padding: 15px;
   }
-
   .managementtopic {
     font-size: 32px;
   }
-
-  .hour {
-    width: 35px;
-    height: 35px;
-  }
-
   .Addbox {
     width: 400px;
     height: 330px;
-    right: 50%;
-    top: 30%;
-    transform: translateX(50%);
   }
 }
 
-/* موبایل (تا 768px) */
 @media (max-width: 768px) {
   .addtasks {
     margin-right: 20px;
     margin-left: 20px;
-    margin-top: 30px;
     padding: 15px;
-    gap: 15px;
   }
-
-  .managementpart {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .managementtopic {
-    font-size: 24px;
-    margin-top: 10px;
-  }
-
-  .hour {
-    width: 30px;
-    height: 30px;
-  }
-
-  .addtasks h3 {
-    font-size: 14px;
-    text-align: center;
-    line-height: 1.5;
-  }
-
-  .addtasks > div:last-child {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  select, .button {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-  }
-
   .Addbox {
     width: 90%;
     height: auto;
     min-height: 350px;
-    right: 5%;
-    left: 5%;
-    top: 20%;
-    transform: none;
-    padding: 15px;
-  }
-
-  .midofadding h2 {
-    font-size: 20px;
-    margin: 10px 0;
-  }
-
-  .inputpart {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .inputpart select,
-  .inputpart .inputtask {
-    width: 100%;
-  }
-
-  .inputtask {
-    height: 25px;
-    font-size: 14px;
-  }
-
-  .cancelbtn {
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-
-  .submitbtn {
-    width: 100%;
-    padding: 12px;
-  }
-
-  .checkboxGroup label {
-    font-size: 12px;
   }
 }
-
-/* موبایل خیلی کوچک (تا 480px) */
-@media (max-width: 480px) {
-  .addtasks {
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 10px;
-  }
-
-  .managementtopic {
-    font-size: 20px;
-  }
-
-  .hour {
-    width: 25px;
-    height: 25px;
-  }
-
-  .addtasks h3 {
-    font-size: 12px;
-  }
-
-  .Addbox {
-    width: 80%;
-    right: 4.5%;
-    left: 2.5%;
-    top: 15%;
-    padding: 12px;
-    min-height: 320px;
-  }
-
-  .midofadding h2 {
-    font-size: 18px;
-  }
-
-  .inputbox {
-    gap: 20px;
-    width: 90%;
-  }
-
-  .inputtask {
-    height: 22px;
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  select, .button {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .cancelbtn {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
-  }
-
-  .submitbtn {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .checkboxGroup {
-    margin-top: 10px;
-    padding: 8px;
-  }
-
-  .checkboxGroup label {
-    font-size: 11px;
-  }
-}
-
-/* موبایل افقی (Landscape) */
-@media (max-width: 768px) and (orientation: landscape) {
-  .Addbox {
-    top: 10%;
-    height: auto;
-    max-height: 85vh;
-    overflow-y: auto;
-  }
-
-  .midofadding {
-    gap: 10px;
-  }
-
-  .inputbox {
-    gap: 15px;
-  }
-}
-
-/* انیمیشن fadeIn */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-

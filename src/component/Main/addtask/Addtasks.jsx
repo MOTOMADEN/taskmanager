@@ -35,9 +35,7 @@ function Addtasks({ onAddTask, onFilterChange }) {
     console.log("مقدار فیلتر:", filterValueParam);
     setSelectedFilter(filterValueParam);
 
-    const selectedItem = selectvalue.find(
-      (item) => item.value === filterValueParam,
-    );
+    const selectedItem = selectvalue.find(item => item.value === filterValueParam);
     const describevalue = selectedItem ? selectedItem.describe : "";
 
     setdescribetask(describevalue);
@@ -50,24 +48,22 @@ function Addtasks({ onAddTask, onFilterChange }) {
 
   return (
     <>
-      {addingbox && <div className={Styles.overlay} onClick={closebox} />}
+      {/* محتوای اصلی */}
       <div className={Styles.addtasks}>
         <div>
           <div className={Styles.managementpart}>
             <img src={hourglass} className={Styles.hour} alt="" />
             <h2 className={Styles.managementtopic}>مدیریت و برنامه ریزی</h2>
           </div>
-          <h3 className={Styles.creator}>ساخته شده توسط علی اسمعیلی</h3>
+          <h3 className={Styles.creator}>
+            ساخته شده توسط علی اسمعیلی
+          </h3>
         </div>
         <div>
           <button className={Styles.button} onClick={wantadd}>
             ایجاد جدید+
           </button>
-          <select
-            value={selectedFilter}
-            onChange={handleFilterChange}
-            className={Styles.shoeselection}
-          >
+          <select value={selectedFilter} onChange={handleFilterChange} className={Styles.shoeselection}>
             {selectvalue.map((item) => (
               <option key={item.id} value={item.value}>
                 {item.title}
@@ -76,12 +72,17 @@ function Addtasks({ onAddTask, onFilterChange }) {
           </select>
         </div>
       </div>
+
+      {/* مودال و overlay - خارج از محتوای اصلی */}
       {addingbox && (
-        <Addbox
-          closebox={closebox}
-          selectvalue={selectvalue}
-          onAddTask={handleAddTask}
-        />
+        <>
+          <div className={Styles.overlay} onClick={closebox} />
+          <Addbox
+            closebox={closebox}
+            selectvalue={selectvalue}
+            onAddTask={handleAddTask}
+          />
+        </>
       )}
     </>
   );
