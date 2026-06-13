@@ -90,7 +90,6 @@
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
 
-/* Addbox خفن */
 .Addbox {
   position: fixed;
   z-index: 201;
@@ -270,7 +269,7 @@
     width: 400px;
     height: 330px;
     right: 50%;
-    top: 30%;
+    top: 50%;
     transform: translateX(50%);
   }
 }
