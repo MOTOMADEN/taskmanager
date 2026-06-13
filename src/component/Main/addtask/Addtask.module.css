@@ -99,7 +99,7 @@
   padding: 25px;
   height: 400px;
   width: 500px;
-  top: 50%;
+  top: 400px;
   left: 50%;
   transform: translate(-50%, -50%);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
@@ -269,7 +269,7 @@
     width: 400px;
     height: 330px;
     right: 50%;
-    top: 400px;
+    top: 50%;
     transform: translateX(50%);
   }
 }
